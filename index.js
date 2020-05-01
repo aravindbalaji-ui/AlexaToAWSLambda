@@ -12,19 +12,23 @@
                 .getResponse();
         }
     };
-    const HelloWorldIntentHandler = {
-        canHandle(handlerInput) {
-            return Alexa.getRequestType(handlerInput.requestEnvelope) === 'helloworld';
-        },
-        handle(handlerInput) {
-            const speakOutput = 'Hello world! THis is the is the first Alexa lambda function';
-            return handlerInput.responseBuilder
+   const HelloWorldIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'hellointent';
+    },
+    async handle(handlerInput) {
+                
+        const speakOutput = `Hello How is the day and how could i help you'
+
+return handlerInput.responseBuilder
                 .speak(speakOutput)
                 .reprompt(speakOutput)
                 .getResponse();
-        }
-    };
- 
+        
+    }
+};
+
     const ErrorHandler = {
         canHandle() {
             return true;

@@ -19,7 +19,7 @@
     },
     async handle(handlerInput) {
                 
-        const speakOutput = `Hello How is the day and how could i help you'
+        const speakOutput = 'Hello How is the day and how could i help you';
 
 return handlerInput.responseBuilder
                 .speak(speakOutput)
